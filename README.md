@@ -11,7 +11,7 @@ QQ空间数据导出及显示。
 
 导出数据
 
-```shell
+``` shell
 usage: exporter.py [-h] [--blog] [--msgboard] [--photo] [--shuoshuo] [--like]
                    [--download] [--all]
 
@@ -27,7 +27,7 @@ optional arguments:
 
 显示数据
 
-```shell
+``` shell
 usage: displayer.py [-h] [--download]
 
 optional arguments:
@@ -35,51 +35,9 @@ optional arguments:
   --download  当本地不存在图片、视频时，尝试下载至本地
 ```
 
-## 输入
-
-- target_uin
-  需要导出数据的QQ号。
-- self_uin
-  用于登录空间的QQ号。
-- cookies_value
-  从浏览器登录QQ空间，按 `F12`，点击 `Network` 选项卡，点击QQ空间“我的主页“，点击 `XHR`，点击 `main_page_cgi` 请求，从 `Header` 中找出 `cookie`，如图所示。
-- g_tk
-  可通过 cookies_value 中的 `p_skey` 计算，选填。
-  ![获取g_tk及cookie](pic/1.png)
-
-登录QQ需要有访问目标QQ空间的权限。
-
-## 网页显示效果
-
-### 预览
-
-![预览](pic/html_preview.png)
-
-### 日志
-
-![blog](pic/html_blog0.png)
-
-![blog](pic/html_blog1.png)
-
-### 留言板
-
-![msgboard](pic/html_msgboard.png)
-
-### 相册
-
-![photo](pic/html_photo0.png)
-
-![photo](pic/html_photo1.png)
-
-![photo](pic/html_photo2.png)
-
-### 说说
-
-![shuoshuo](pic/html_shuoshuo.png)
-
 ## 输出文件
 
-```plain
+``` plain
 target_uin/
     blog/
         日志分类/             // 譬如：个人日志
@@ -105,26 +63,6 @@ target_uin/
     like_information.json     // 保存点赞数据
 ```
 
-### 日志
-
-![blog](pic/blog1.png)
-
-![blog](pic/blog2.png)
-
-### 留言板
-
-![msgboard](pic/msgboard.png)
-
-### 相册
-
-![photo](pic/photo1.png)
-
-![photo](pic/photo2.png)
-
-### 说说
-
-![shuoshuo](pic/shuoshuo.png)
-
 ## 说明
 
 - 数据以json格式保存，可通过网页显示主要数据。
@@ -142,7 +80,7 @@ target_uin/
 
 ## 使用
 
-```python
+``` python
 # exporter.py
 # 根据需要设定以下变量
 target_uin = "需要导出数据的QQ号"
@@ -159,26 +97,26 @@ q.export()
 
 命令行中运行
 
-```shell
+``` shell
 python exporter.py --blog
 ```
 
 #### 下载相册照片
 
-```shell
+``` shell
 python exporter.py --photo
 python exporter.py --download
 ```
 
 或
 
-```shell
+``` shell
 python exporter.py --photo --download
 ```
 
 #### 网页显示
 
-```shell
+``` shell
 python displayer.py [--download]
 ```
 
@@ -211,9 +149,3 @@ python displayer.py [--download]
 ## LICENSE
 
 GPL-3.0，额外条件：禁止商用。
-
-## 捐赠
-
-如果您认为该项目在一定程度上帮助了您，可以赞赏我:D
-
-![赞赏码](https://raw.githubusercontent.com/wwwpf/ttt/master/qr.png)
