@@ -1,5 +1,7 @@
 # QzoneExporter
 
+> 原始仓库来自[wwwpf](https://github.com/wwwpf)作者的[QzoneExporter](https://github.com/wwwpf/QzoneExporter)，非`Fork`分支故放飞自我着手重构
+
 QQ空间数据导出及显示。
 
 - 导出日志、留言板、相册、说说等数据。
